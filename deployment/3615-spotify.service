@@ -1,0 +1,13 @@
+[Unit]
+Description=3615 spotify
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/3615-spotify
+ExecStart=/home/pi/3615-spotify/.venv/bin/uvicorn 3615-spotify:app --host 0.0.0.0 --port 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
